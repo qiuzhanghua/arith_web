@@ -11,13 +11,21 @@
       Your browser does not support the audio tag.
     </audio>
 
-    <h3>Press A for Add(+)</h3>
-    <h3>Press S for Subtract(-)</h3>
-    <h3>Press M for Multiply(*)</h3>
-    <h3>Press D for Divide(/)</h3>
-
+    <h3>
+      <button @click.stop="operate(1)"><u>A</u>dd</button>
+    </h3>
+    <h3>
+      <button @click.stop="operate(2)"><u>S</u>ub</button>
+    </h3>
+    <h3>
+      <button @click.stop="operate(3)"><u>M</u>ul</button>
+    </h3>
+    <h3>
+      <button @click.stop="operate(4)"><u>D</u>iv</button>
+    </h3>
     <h1 v-show="true">{{ description }}</h1>
     <h2 v-show="show_answer">{{ answer }}</h2>
+    <h3>练习简单的加减乘除</h3>
   </div>
 </template>
 
@@ -101,5 +109,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+button {
+  font-size: 2rem;
+  font-family: Consolas, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 </style>
